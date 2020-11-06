@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>TODO</h1>
+        </header>
+        <div id="project-menu">
+            <div class="inner">
+                <div class="create project-item">
+                    <div class="add">+</div>
+                </div>
+                <br>
+            </div>
+            <div class="modal">
+                <div class="add-new-list">
+                    <label>Name</label><br>
+                    <input type="text" placeholder="Add Name For Your List." class="list-name"><br>
+                    <input type="button" value="Done" class="done">
+                    <input type="button" value="Cancel" class="cancel">
+                </div>
+                <div class="edit-list-name">
+                    <label>Edit Name</label><br>
+                    <input type="text" placeholder="Edit Name Of Your List." class="list-name"><br>
+                    <input type="button" value="Done" class="done">
+                    <input type="button" value="Cancel" class="cancel">
+                </div>
+                <div class="delete-list-modal">
+                    <label>This List Will be Deleted Permanently!!</label><br>
+                    <input type="button" value="Continue" class="done">
+                    <input type="button" value="Cancel" class="cancel">
+                </div>
+                <div class="add-item-modal">
+                    <label>Add Task</label><br>
+                    <input type="text" placeholder="Name of the Task" class="task-name"><br>
+                    <input type="text" placeholder="Description" class="task-descp" style="height: 100px"><br>
+                    <input type="date" placeholder="Date" class="date">
+                    <select name="priority" class="priority">
+                        <option value="High">High</option>  
+                        <option value="Mid">Mid</option>
+                        <option value="Low">Low</option>
+                    </select>
+                    <input type="button" value="Continue" class="done">
+                    <input type="button" value="Cancel" class="cancel">
+                </div>
+                <div class="lists">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

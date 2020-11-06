@@ -1,0 +1,367 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    margin: 0;
+    background-image: linear-gradient(to right, #8360c3, rgb(77, 224, 192));
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+}
+
+header{
+    margin: 0;
+}
+
+header h1{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#project-menu{
+    height: 70vh;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: white;
+}
+
+#project-menu .inner{
+    overflow-y: auto;
+    display: grid;
+    width: 90%;
+    height: inherit;    
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: auto auto auto;
+}
+
+
+#project-menu .project-item{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 20px;
+    transition: box-shadow 0.25s;
+}
+
+.project-item p{
+    position: relative;
+    top: 15%;
+    text-align: center;
+    font-size: 45px;
+    font-family: opensans;
+    transition: font-size, top, ease .25s;
+}
+
+.project-item hr{
+    width: 15%;
+    border: 1px solid black;
+    position: relative;
+    top: 15%;
+    opacity: 0;
+    transition: top, opacity, ease .25s;
+}
+
+.project-item .nav-menu{
+    height: 20px;   
+    position: relative;
+    top: 25%;
+    margin: 10px auto;
+    opacity: 0;
+    transition: top, opacity, ease .25s;
+}
+
+
+.project-item .nav-menu i{
+    font-size: 25px;
+    padding: 7px;
+    margin: 5px;
+    text-align: center;
+    font-weight: lighter;
+    border: 1px solid grey;
+    border-radius: 50%;
+    color: grey;
+}
+
+.project-item .nav-menu i:hover{
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.project-item .todo-list{
+    height: 200px;
+    width: 300px;
+    background-color: black;
+    position: absolute;
+}
+#project-menu .project-item:hover{
+    box-shadow: 4px 4px 15px rgba(0, 0, 4, .37);
+    cursor: pointer;
+}
+
+#project-menu .project-item:hover p{
+    font-size: 35px;
+    top: -5%;
+}
+#project-menu .project-item:hover hr{
+    top: -20%;
+    opacity: 1;
+}
+#project-menu .project-item:hover .nav-menu{
+    top: -20%;
+    opacity: 1;
+}
+
+.create{
+    justify-content: center;
+    align-items: center;
+}
+
+
+.create .add{
+    font-size: 30px;
+    border: 2px solid grey;
+    text-align: center;
+    color: grey;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    transition: color, border, .25s;
+    transition-timing-function: ease-out;
+}
+
+.create:hover .add{
+    color: black;
+    border: 2px solid black;
+}
+
+.modal div{
+    height: 240px;
+    max-width: 375px;
+    background: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px auto;
+    display: none;
+}
+
+.modal .delete-list-modal{
+    height: 200px;
+}
+
+.modal .delete-list-modal label{
+    font-family: opensans;
+    color: black;
+    position: relative;
+    top: 15%;
+    font-size: 25px;
+}
+
+.modal .add-item-modal{
+    padding: 20px;
+    height: unset;
+}
+
+.modal .add-item-modal input[type='button']{
+    margin-top: 20px;
+}
+.modal div label{
+    font-family: opensans;
+    color: black;
+    position: relative;
+    top: 10%;
+    font-size: 35px;
+}
+
+.modal div input[type='text']{
+    border: 0 solid;
+    background-color: gainsboro;
+    height: 30px;
+    width: 75%;
+    position: relative;
+    top: 15%;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 20px;
+    border-radius: 10px;
+    color: rgb(46, 49, 53);
+    font-family: roboto;
+}
+.modal div select{
+    border: 0 solid;
+    background-color: gainsboro;
+    height: 48px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: rgb(46, 49, 53);
+    font-family: roboto;
+    padding: 0px 20px;
+    border-radius: 10px;
+    width: 37.5%;
+}
+
+.modal div input[type='date']{
+    border: 0 solid;
+    background-color: gainsboro;
+    height: 30px;
+    width: 37.5%;
+    position: relative;
+    top: 15%;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 20px;
+    border-radius: 10px;
+    color: rgb(46, 49, 53);
+    font-family: roboto;
+}
+
+.modal div input[type="button"]{
+    display: inline-block;
+    position: relative;
+    top: 25%;
+    border: 0px solid;
+    background-color: gainsboro;
+    margin: 5px 10px;
+    border-radius: 10px;
+    font-family: opensans;    
+    color: rgb(89, 93, 97);
+    font-size: 20px;
+    transition: color, background-color, ease, .25s;
+    padding: 13px;
+}
+
+.modal div input[type="button"]:hover{
+    color: white;
+    background-color: rgb(77, 224, 192);
+    cursor: pointer;
+}
+
+.modal{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    display: none;
+}
+
+.modal div input::placeholder{
+    font-size: 20px;
+    font-family: roboto;
+    color: rgb(89, 93, 97);
+}
+
+.modal .lists{
+    min-height: 300px;
+    min-width: 500px;
+    background-color: white;
+    z-index: 1;
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    overflow: auto;
+    padding: 0px;
+}
+
+.modal .lists div{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: inherit;
+    border: 0 solid;
+    box-shadow: none;
+    display: none;
+}
+
+.modal .lists .cancel{
+}
+
+.modal .lists div ul .close-btn{
+    border: 0 solid;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lists div p{
+    font-family: opensans;
+    color: black;
+    font-size: 35px;
+    margin-top: 0px;
+}
+
+.lists div ul{
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+    padding: 0px;
+    position: absolute;
+
+}
+.lists div ul li{
+    border: 5px solid;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 30px;
+    font-family: opensans;
+}
+
+.lists div ul li i{
+    display: none;
+}
+
+
+.lists div ul li:hover{
+    border-color: black;
+}
+
+.lists div ul li:hover i{
+    display: inline;
+    margin: 5px 3px;
+    float: right;
+    color: rgb(89, 93, 97);
+}
+
+.lists div ul li:hover .date{
+    display: none;
+}
+
+.lists div ul .date{
+    display: inline;
+    margin: auto 10px;
+    float: right;
+    font-size: inherit;
+    padding: 0px 0px;
+    color: black;
+}
+.lists div ul li i:hover{
+    color: black;
+    cursor: pointer;
+}
